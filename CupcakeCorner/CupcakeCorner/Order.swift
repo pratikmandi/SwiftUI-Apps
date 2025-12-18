@@ -34,4 +34,21 @@ class Order{
     var isValidAddress: Bool {
         return !name.isEmpty && !streetAddress.isEmpty && !city.isEmpty && !postCode.isEmpty
     }
+    
+    var price: Decimal {
+        // ₹30 per cake
+        var cost = Decimal(quantity) * 30
+
+        // ₹5/cake for extra frosting
+        if extraFrosting {
+            cost += Decimal(quantity) * 5
+        }
+
+        // ₹2/cake for sprinkles
+        if addSprinkles {
+            cost += Decimal(quantity) * 2
+        }
+
+        return cost
+    }
 }
