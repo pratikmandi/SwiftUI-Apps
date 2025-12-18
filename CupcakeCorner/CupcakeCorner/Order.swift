@@ -25,4 +25,13 @@ class Order{
     }
     var extraFrosting = false
     var addSprinkles = false
+    
+    var name = ""
+    var streetAddress = ""
+    var city = ""
+    var postCode = ""
+    
+    var isValidAddress: Bool {
+        return !name.isEmpty && !streetAddress.isEmpty && !city.isEmpty && !postCode.isEmpty
+    }
 }
